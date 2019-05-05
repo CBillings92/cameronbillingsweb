@@ -2,8 +2,6 @@
 
 import React from 'react';
 import { css, keyframes } from '@emotion/core';
-// import { Link, graphql } from 'gatsby';
-// import { rhythm } from '../utils/typography';
 import SectionHeader from '../components/section-header';
 import WorkExperienceCard from '../components/work-experience-card';
 import LearningToolCard from '../components/learning-tool-card';
