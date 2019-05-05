@@ -1,0 +1,22 @@
+version: 1.0
+phases:
+  install:
+    commands:
+      - 'touch .npmignore'
+      - 'npm install -g gatsby'
+      - 'npm install -g yarn'
+    pre_build:
+      commands:
+        - 'yarn install'
+      build:
+        commands:
+          - 'npm run build'
+      post_build:
+        commands:
+          -'aws s3 sync "public/" "s3://<ENTER YOUR BUCKET NAME>" --delete --acl "public-read"'
+'articfacts':
+  base-directory: public
+  files:
+    - '**/*'
+  discard-paths: yes
+
