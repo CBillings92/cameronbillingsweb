@@ -1,8 +1,5 @@
 import React from 'react';
 import { css } from '@emotion/core';
-import { Link } from 'gatsby';
-
-import { rhythm } from '../utils/typography';
 
 const breakpoints = [475, 576, 768, 992, 1200];
 

@@ -1,12 +1,9 @@
 import React from 'react';
 import { css } from '@emotion/core';
-import { Link } from 'gatsby';
 
-import { rhythm } from '../utils/typography';
+// const breakpoints = [576, 768, 992, 1200];
 
-const breakpoints = [576, 768, 992, 1200];
-
-const mq = breakpoints.map(bp => `@media (min-width: ${bp}px)`);
+// const mq = breakpoints.map(bp => `@media (min-width: ${bp}px)`);
 
 export default props => (
   <div

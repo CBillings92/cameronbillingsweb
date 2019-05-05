@@ -1,13 +1,14 @@
+/*eslint-disable no-script-url*/
+
 import React from 'react';
 import { css, keyframes } from '@emotion/core';
-import { Link, graphql } from 'gatsby';
-import { rhythm } from '../utils/typography';
+// import { Link, graphql } from 'gatsby';
+// import { rhythm } from '../utils/typography';
 import SectionHeader from '../components/section-header';
 import WorkExperienceCard from '../components/work-experience-card';
 import LearningToolCard from '../components/learning-tool-card';
-import headshot from '../../static/images/headshots/lightning.jpg';
 import wizioLogo from '../../static/images/favicon-194x194.png';
-import cameronPhoto from '../../static/images/headshots/lightning.jpg';
+import cameronHeadShot from '../../static/images/headshots/headshot_v3.jpg';
 import placesForLessLogo from '../../static/images/placesforless.png';
 import SimpleListItem from '../components/simple-list-item';
 import ChevronNavigation from '../components/chevron-navigation';
@@ -25,8 +26,7 @@ const popIn = keyframes`
   }
 `;
 
-const mq = breakpoints.map(bp => `@media (min-width: ${bp}px)`);
-
+const mq = breakpoints.map(bp => `@media (max-width: ${bp}px)`);
 export default ({ data }) => {
   const frontEndMasterCourses = [
     { name: 'Complete Intro to React, v3 (feat. Redux, Router & Flow)' },
@@ -106,16 +106,15 @@ export default ({ data }) => {
           } */}
           background-color: #071013;
           min-height: 100vh;
+          width:100%;
           display: flex;
-          position: relative;
           align-items: center;
+          justify-content: space-around;
         `}
       >
         <div
           css={css`
-            width: 90%;
-            margin: 0 auto;
-            flex-direction: column;
+            width: 50%;
             ${mq[1]} {
               width: 33%;
             }
@@ -123,6 +122,7 @@ export default ({ data }) => {
         >
           <div
             css={css`
+              width:100%;
               padding: 0 10px;
               animation: ${popIn} 0.6s cubic-bezier(0, 1.02, 0.7, 1.23) forwards;
             `}
@@ -130,7 +130,6 @@ export default ({ data }) => {
             <h1
               css={css`
                 font-size: 300%;
-                display: inline-block;
                 color: white;
                 text-align: left;
               `}
@@ -140,6 +139,7 @@ export default ({ data }) => {
           </div>
           <div
             css={css`
+              width: 100%;
               padding: 0 10px;
               color: white;
               font-size: 150%;
@@ -155,9 +155,29 @@ export default ({ data }) => {
               others live their best life.
             </p>
           </div>
-          <ChevronNavigation targetElement="#professional-experience" />
         </div>
+          <div css={css`
+            width:500px;
+            opacity: 0;
+            animation: ${popIn} 0.6s cubic-bezier(0, 1.02, 0.7, 1.23) forwards;
+          `}>
+            <img css={css`display: block`} src={cameronHeadShot} alt='headshot'>
+            </img>
+          </div>
+          <div css={css`
+            width:500px;
+            opacity: 0;
+            animation: ${popIn} 0.6s cubic-bezier(0, 1.02, 0.7, 1.23) forwards;
+            animation-delay:1.2s;
+            position: absolute;
+            bottom: 20px;
+          `}>
+          <ChevronNavigation 
+           targetElement="#professional-experience" />
+          </div>
       </div>
+      
+        
       <div
         id="professional-experience"
         css={css`
@@ -206,7 +226,7 @@ export default ({ data }) => {
           description="Worked to provide business units across the organization with the data, reports and applications they needed to accomplish their goals. Tools and languages used were Fiserv's Hyperion, SSIS, TSQL, SQLServer, C#, .NET, HTML/CSS, WebForms, Bootstrap Framework"
         />
       </div>
-      <div
+      {/* <div
         id="lets-talk-tech"
         css={css`
           display: flex;
@@ -227,8 +247,8 @@ export default ({ data }) => {
         >
           {skillsListHTML}
         </div>
-      </div>
-      <div
+      </div> */}
+      {/* <div
         css={css`
           display: flex;
           flex-direction: column;
@@ -265,7 +285,7 @@ export default ({ data }) => {
           coursesTaken={[]}
           learningToolSubName="Level 27"
         />
-      </div>
+      </div> */}
     </div>
   );
 };
