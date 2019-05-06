@@ -12,6 +12,8 @@ phases:
     commands:
       - 'npm run build'
 articfacts:
+  base-directory: public
   files:
     - '**/*'
+  discard-paths: yes
 
