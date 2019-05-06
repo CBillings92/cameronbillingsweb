@@ -15,8 +15,6 @@ phases:
       commands:
         -'aws s3 sync "public/" "s3://www.cameronbillings.com" --delete --acl "public-read"'
 articfacts:
-  base-directory: public
   files:
     - '**/*'
-  discard-paths: yes
 
