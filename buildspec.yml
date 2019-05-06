@@ -5,15 +5,16 @@ phases:
       - 'touch .npmignore'
       - 'npm install -g gatsby'
       - 'npm install -g yarn'
-  pre_build:
-    commands:
-      - 'yarn install'
-  build:
-    commands:
-      - 'npm run build'
+    pre_build:
+      commands:
+        - 'yarn install'
+    build:
+      commands:
+        - 'npm run build'
+    post_build:
+      commands:
+        -'echo "hello"'
 articfacts:
-  base-directory: public
   files:
     - '**/*'
-  discard-paths: yes
 
